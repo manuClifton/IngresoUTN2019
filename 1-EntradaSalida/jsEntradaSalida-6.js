@@ -7,10 +7,11 @@ function sumar()
     var n2;
     var resultado;
 
-    n1=document.getElementById("numeroUno").value;
-    n1=parseInt(n1);
-    n2=document.getElementById("numeroDos").value;
-    n2=parseInt(n2);
+    
+    n1=parseInt(document.getElementById("numeroUno").value);
+    
+    n2=parseInt(document.getElementById("numeroDos").value);
+    
     resultado = n1+n2;
 
     alert("la suma es "+resultado);
