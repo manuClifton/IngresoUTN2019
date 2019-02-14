@@ -8,7 +8,43 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
+var cantidad;
+var precioDescuento; 
+var precioPorLampara;
+var resultado;
+var select;
+
 function CalcularPrecio () 
 {
- 	
+     //precioDescuento = document.getElementById("precioDescuento").value;
+ 	cantidad = parseFloat(document.getElementById("Cantidad").value);
+    select = document.getElementById("Marca").value;
+    precioPorLampara= cantidad*35;
+
+    if(cantidad >= 6){
+        resultado = precioPorLampara -(precioPorLampara*0.5);
+        document.getElementById("precioDescuento").value = resultado;
+    }else if(cantidad == 5 && select == "ArgentinaLuz"){
+        resultado = precioPorLampara - (precioPorLampara*0.4);
+        document.getElementById("precioDescuento").value = resultado;
+    }else if((cantidad == 5 && select != "ArgentinaLuz")){
+        resultado = precioPorLampara - (precioPorLampara*0.3);
+        document.getElementById("precioDescuento").value = resultado;
+    }else if(cantidad == 4 && (select == "ArgentinaLuz" || select == "FelipeLamparas" ) ){
+        resultado = precioPor4Lampara -(precioPorLampara*0.25);
+        document.getElementById("precioDescuento").value = resultado;
+    }else if(cantidad == 4 ) {
+        resultado = precioPorLampara -(precioPorLampara*0.2);
+        document.getElementById("precioDescuento").value = resultado;
+    }else if(cantidad == 3 && select == "ArgentinaLuz"){
+        resultado = precioPorLampara -(precioPorLampara*15/100);
+        document.getElementById("precioDescuento").value = resultado;
+    }else if(cantidad == 3 && select == "FelipeLamparas"){
+        resultado = precioPorLampara -(precioPorLampara*10/100);
+        document.getElementById("precioDescuento").value = resultado;
+    }else if(cantidad == 3 && select != "ArgentinaLuz" || select != "FelipeLamparas" ){
+        resultado = precioPorLampara -(precioPorLampara*5/100);
+        document.getElementById("precioDescuento").value = resultado;
+    }
+
 }
