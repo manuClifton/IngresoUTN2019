@@ -16,7 +16,8 @@ do{
 		
 		if(num>maximo || flag==0){
 			maximo=num;
-		}else if(num<minimo|| flag==0){
+		}
+		 if(num<minimo|| flag==0){
 			minimo=num;
 			flag=1;
 		}
